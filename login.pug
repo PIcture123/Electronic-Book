@@ -1,0 +1,22 @@
+html
+  head
+    title Login
+    link(rel="shortcut icon" href="http://spectrum-centre.com/templates/dd_kidsschool_23/favicon.ico")
+    link(href='/static/css/login.css', rel='stylesheet')
+  body
+    .container
+      .wrapper
+        .form-signin
+          h3.form-signin-heading Welcome to "Specter"! Please Sign In
+          hr.colorgraph
+          br
+          input#username(type='text', name='Username', placeholder='Username', required='', autofocus='')
+          input#password(type='password', name='Password', placeholder='Password', required='')
+          input#firstname(type='text',name='Firstname',placeholder='First name',required='')
+          input#lastname(type='text',name='Lastname',placeholder='Last name',required='')
+          button.btn.btn-lg.btn-primary.btn-block( onclick='Clicked()',type='button' ) Login
+          script(src='/socket.io/socket.io.js')
+          script(src='/static/index.js')
+        .footer
+          span Made By:Valeri Ivanchev  
+    body

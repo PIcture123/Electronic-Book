@@ -1,0 +1,33 @@
+{
+  "name": "school",
+  "version": "1.0.0",
+  "description": "Book_For_School",
+  "main": "server.js",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.16",
+    "pug": "^2.0.0-beta6",
+    "socket.io": "^1.7.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PIcture123/Electronic-Book.git"
+  },
+  "keywords": [
+    "express",
+    "server.js",
+    "node"
+  ],
+  "author": "Valeri Ivanchev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PIcture123/Electronic-Book/issues"
+  },
+  "homepage": "https://github.com/PIcture123/Electronic-Book#readme"
+}
