@@ -1,20 +1,23 @@
 //emlab.com
 var express = require('express');
 var MongoClient = require('mongodb').MongoClient;
-var findDocuments = require('/public/modules/findDocument.js');
-var findDocument = require('/public/modules/findDocumentO.js');
-var findDocumentBypName = require('/public/modules/findDocumentBypName.js');
+var findDocuments = require('./public/modules/findDocument.js');
+var findDocument = require('./public/modules/findDocumentO.js');
+var findDocumentBypName = require('./public/modules/findDocumentBypName.js');
 var	assert = require('assert');
 var app = express();    
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-var findDocumentByusername = require('/public/modules/findDocumentbyUsername.js');
-var insertDocument = require('/public/modules/insertDocument.js');
-app.set('port', (process.env.PORT || 5000));
-server.listen(app.get('port'));
-app.use("/static",express.static("/public"));
+var findDocumentByusername = require('./public/modules/findDocumentbyUsername.js');
+var insertDocument = require('./public/modules/insertDocument.js');
+var port = process.env.PORT || 3333;
+
+server.listen(port, function () {
+  console.log('Server listening at port %d', port);
+});
+app.use("/static",express.static("./public"));
 app.get("/",function(req,res){
-	res.render("/home/valeri/school/login.pug");		
+	res.render("./login.pug");		
 });
 var url = "mongodb://localhost:27017/school";
 var userInfo ={};
@@ -144,7 +147,7 @@ io.on('connection',function(socket){
              MongoClient.connect(url,function(err,db){
 			    assert.equal(null,err);
 		    
-            var uploadDocument = require('/public/modules/updataDocument.js');
+            var uploadDocument = require('./public/modules/updataDocument.js');
             uploadDocument. updateDocument(db,username,function(){
                 db.close();
             });
