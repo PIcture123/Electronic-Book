@@ -19,7 +19,7 @@ app.use("/static",express.static("./public"));
 app.get("/",function(req,res){
 	res.render("./login.pug");		
 });
-var url = "mongodb://localhost:27017/school";
+var url = "mongodb://valeri:dodo2110@ds163698.mlab.com:63698/school";
 var userInfo ={};
 var parentUser = {};
 var parentPrem = false;
